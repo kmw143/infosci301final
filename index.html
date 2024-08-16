@@ -1,0 +1,229 @@
+<!--Designed by CodingTuting.Com-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Nanum+Gothic:700|Raleway&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <title>Data Visualization</title>
+</head>
+<body>    
+<!--Intro Section for our project-->
+    <section id="intro">
+        <div id="intro-info">
+            <div>
+                <h1>The Evolution of Congress</h1>
+                <div id="intro-tag-btn">
+                    <p>How has the demographics and representativeness of Congress representatives evolved over time? It is known that women, minority races, and even certain age groups, are underrepresented in America, especially in positions of power, but to what extent? Has the situation changed over the decades? Through visualizations of a 1973-2013 House of Representatives dataset from Harvard database, we hope to uncover or highlight some facts about the complex demographics dynamics. </p>
+                    <a href="" class="brand-btn">Let's Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="development-img">
+            <img src="images/capitol.gif"/>
+        </div>
+    </section>
+
+    <section id="delivery">
+        <h1 class="sec-heading">Race Demographics by Political Party</h1>
+        <div class="col-5 delivery-img">
+            <div class="flourish-embed flourish-parliament" data-src="visualisation/16998213"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+        <div class="col-7">
+            <h2>What is the <span style="color: #ef4b42;">Distribution of Races</span> of Representatives Over Different <span style="color: #ef4b42;">Political Parties?</span></h2>
+            <p>
+                In the dynamic race relations in America, has this change been reflected in political seats of power? The parliament chart visualizes race distribution for every Congressional session, with red tones representing the Republican party, and Blue tones representing Democratic.<br/><br/>The visualization shows that while Congress has remained majority white, there has been a visible increase in diversity, especially among the Democrats. What other observations do you see?
+            </p>
+        </div>
+    </section>
+    
+    <section id="success-story">
+        <h1 class="sec-heading">Gender Demographics</h1> 
+        <div class="slider">
+            <div class="col-6 slide-text">
+                <div>
+                    <h2>Has the <span style="color: #ef4b42;">Race </span>or <span style="color: #ef4b42;">Gender</span> Composition in Congress Changed Over Time?</h2>
+                    <p>
+                        Women and minority racial groups have historically been underrepresented in America, especially in positions of power. The visualization to the right shows the percentage distributions of three race groups (White/Other, Hispanic, and Black) and two genders (Male and Female) over time. According to the graphs, there seems to be an upward trend in number of female and non-White Congress House members.
+                    </p>
+                </div>
+                <br>
+            </div>
+            <div class="col-6 slide-img">
+                <style>
+                    #vis.vega-embed {
+                    width: 100%;
+                    display: flex;
+                    }
+    
+                    #vis.vega-embed details,
+                    #vis.vega-embed details summary {
+                    position: relative;
+                    }
+                </style>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+            </head>
+            <body>
+                <div id="vis"></div>
+                <script>
+                    (function(vegaEmbed) {
+                    var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "vconcat": [{"hconcat": [{"layer": [{"mark": {"type": "area"}, "encoding": {"color": {"field": "variable", "title": "Race", "type": "nominal"}, "opacity": {"value": 0.8}, "order": {"field": "variable", "sort": "ascending", "type": "nominal"}, "x": {"field": "congressYear", "title": "Year", "type": "ordinal"}, "y": {"field": "value", "title": "Percentage", "type": "quantitative"}}, "title": "Percentage Area Distribution of Race in the House by Year"}, {"mark": {"type": "rule", "color": "#aaa"}, "encoding": {"x": {"field": "congressYear", "type": "ordinal"}}, "transform": [{"filter": {"param": "param_1", "empty": false}}]}, {"mark": {"type": "circle"}, "encoding": {"color": {"field": "variable", "title": "Race", "type": "nominal"}, "opacity": {"condition": {"param": "param_1", "value": 0, "empty": false}, "value": 0}, "order": {"field": "variable", "sort": "ascending", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "value", "title": "Percentage", "type": "quantitative"}}, "name": "view_1", "title": "Percentage Area Distribution of Race in the House by Year"}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 0, "dy": -5, "fontSize": 10}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"value": 0}}, "transform": [{"calculate": "\"Congress number: \" + datum.congNum", "as": "text"}, {"filter": {"param": "param_1", "empty": false}}]}]}, {"layer": [{"mark": {"type": "line"}, "encoding": {"color": {"field": "variable", "title": "Race", "type": "nominal"}, "opacity": {"value": 0.8}, "x": {"field": "congressYear", "title": "Year", "type": "ordinal"}, "y": {"field": "value", "title": "Percentage", "type": "quantitative"}}, "title": "Percentages of Each Race in the House by Year"}, {"mark": {"type": "rule", "color": "#aaa"}, "encoding": {"x": {"field": "congressYear", "type": "ordinal"}}, "transform": [{"filter": {"param": "param_1", "empty": false}}]}, {"mark": {"type": "circle"}, "encoding": {"color": {"field": "variable", "title": "Race", "type": "nominal"}, "opacity": {"condition": {"param": "param_1", "value": 1, "empty": false}, "value": 0}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "value", "type": "quantitative"}}, "name": "view_2", "title": "Percentages of Each Race in the House by Year"}, {"mark": {"type": "text", "align": "left", "dx": 5, "dy": -5, "stroke": "white", "strokeWidth": 2}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"calculate": "format(datum.value, \".2f\") + \"%\"", "as": "text"}, {"filter": {"param": "param_1", "empty": false}}]}, {"mark": {"type": "text", "align": "left", "dx": 5, "dy": -5}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "value", "type": "quantitative"}}, "transform": [{"calculate": "format(datum.value, \".2f\") + \"%\"", "as": "text"}, {"filter": {"param": "param_1", "empty": false}}]}]}], "data": {"name": "data-5c81866168eb89a671bf107d7da1b919"}}, {"hconcat": [{"layer": [{"data": {"name": "data-1eaf99ad77f069e8ed06cbaa6d92ff17"}, "mark": {"type": "area"}, "encoding": {"color": {"field": "gender", "title": "Gender", "type": "nominal"}, "opacity": {"value": 0.8}, "order": {"field": "gender", "sort": "ascending", "type": "nominal"}, "x": {"field": "congressYear", "title": "Year", "type": "ordinal"}, "y": {"field": "percentage", "title": "Percentage", "type": "quantitative"}}, "title": "Percentage Area Distribution of Gender in the House by Year"}, {"data": {"name": "data-1eaf99ad77f069e8ed06cbaa6d92ff17"}, "mark": {"type": "rule", "color": "#aaa"}, "encoding": {"x": {"field": "congressYear", "type": "ordinal"}}, "transform": [{"filter": {"param": "param_1", "empty": false}}]}, {"data": {"name": "data-1eaf99ad77f069e8ed06cbaa6d92ff17"}, "mark": {"type": "circle"}, "encoding": {"color": {"field": "gender", "title": "Gender", "type": "nominal"}, "opacity": {"condition": {"param": "param_1", "value": 0, "empty": false}, "value": 0}, "order": {"field": "gender", "sort": "ascending", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "percentage", "title": "Percentage", "type": "quantitative"}}, "name": "view_3", "title": "Percentage Area Distribution of Gender in the House by Year"}, {"data": {"name": "data-5c81866168eb89a671bf107d7da1b919"}, "mark": {"type": "text", "align": "left", "color": "black", "dx": 0, "dy": -5, "fontSize": 10}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"value": 0}}, "transform": [{"calculate": "\"Congress number: \" + datum.congNum", "as": "text"}, {"filter": {"param": "param_1", "empty": false}}]}]}, {"layer": [{"mark": {"type": "line"}, "encoding": {"color": {"field": "gender", "title": "Gender", "type": "nominal"}, "opacity": {"value": 0.8}, "x": {"field": "congressYear", "title": "Year", "type": "ordinal"}, "y": {"field": "percentage", "title": "Percentage", "type": "quantitative"}}, "title": "Percentages of Each Gender in the House by Year"}, {"mark": {"type": "rule", "color": "#aaa"}, "encoding": {"x": {"field": "congressYear", "type": "ordinal"}}, "transform": [{"filter": {"param": "param_1", "empty": false}}]}, {"mark": {"type": "circle"}, "encoding": {"color": {"field": "gender", "title": "Gender", "type": "nominal"}, "opacity": {"condition": {"param": "param_1", "value": 1, "empty": false}, "value": 0}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "percentage", "type": "quantitative"}}, "name": "view_4", "title": "Percentages of Each Gender in the House by Year"}, {"mark": {"type": "text", "align": "left", "dx": 5, "dy": -5, "stroke": "white", "strokeWidth": 2}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "percentage", "type": "quantitative"}}, "transform": [{"calculate": "format(datum.percentage, \".2f\") + \"%\"", "as": "text"}, {"filter": {"param": "param_1", "empty": false}}]}, {"mark": {"type": "text", "align": "left", "dx": 5, "dy": -5}, "encoding": {"text": {"field": "text", "type": "nominal"}, "x": {"field": "congressYear", "type": "ordinal"}, "y": {"field": "percentage", "type": "quantitative"}}, "transform": [{"calculate": "format(datum.percentage, \".2f\") + \"%\"", "as": "text"}, {"filter": {"param": "param_1", "empty": false}}]}], "data": {"name": "data-1eaf99ad77f069e8ed06cbaa6d92ff17"}}]}], "params": [{"name": "param_1", "select": {"type": "point", "fields": ["congressYear"], "nearest": true, "on": "mouseover"}, "views": ["view_1", "view_2", "view_3", "view_4"]}], "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json", "datasets": {"data-5c81866168eb89a671bf107d7da1b919": [{"congressYear": 1973.0, "congNum": 93.0, "variable": "hispanic", "value": 1.5625}, {"congressYear": 1975.0, "congNum": 94.0, "variable": "hispanic", "value": 1.5625}, {"congressYear": 1977.0, "congNum": 95.0, "variable": "hispanic", "value": 1.7977528089887642}, {"congressYear": 1979.0, "congNum": 96.0, "variable": "hispanic", "value": 1.5765765765765765}, {"congressYear": 1981.0, "congNum": 97.0, "variable": "hispanic", "value": 2.0089285714285716}, {"congressYear": 1983.0, "congNum": 98.0, "variable": "hispanic", "value": 2.684563758389262}, {"congressYear": 1985.0, "congNum": 99.0, "variable": "hispanic", "value": 3.146067415730337}, {"congressYear": 1987.0, "congNum": 100.0, "variable": "hispanic", "value": 3.125}, {"congressYear": 1989.0, "congNum": 101.0, "variable": "hispanic", "value": 3.3333333333333335}, {"congressYear": 1991.0, "congNum": 102.0, "variable": "hispanic", "value": 3.34075723830735}, {"congressYear": 1993.0, "congNum": 103.0, "variable": "hispanic", "value": 4.464285714285714}, {"congressYear": 1995.0, "congNum": 104.0, "variable": "hispanic", "value": 4.212860310421286}, {"congressYear": 1997.0, "congNum": 105.0, "variable": "hispanic", "value": 4.8997772828507795}, {"congressYear": 1999.0, "congNum": 106.0, "variable": "hispanic", "value": 4.943820224719101}, {"congressYear": 2001.0, "congNum": 107.0, "variable": "hispanic", "value": 4.910714285714286}, {"congressYear": 2003.0, "congNum": 108.0, "variable": "hispanic", "value": 5.605381165919283}, {"congressYear": 2005.0, "congNum": 109.0, "variable": "hispanic", "value": 6.292134831460674}, {"congressYear": 2007.0, "congNum": 110.0, "variable": "hispanic", "value": 5.960264900662252}, {"congressYear": 2009.0, "congNum": 111.0, "variable": "hispanic", "value": 6.415929203539823}, {"congressYear": 2011.0, "congNum": 112.0, "variable": "hispanic", "value": 6.430155210643015}, {"congressYear": 2013.0, "congNum": 113.0, "variable": "hispanic", "value": 7.333333333333333}, {"congressYear": 1973.0, "congNum": 93.0, "variable": "black", "value": 3.571428571428571}, {"congressYear": 1975.0, "congNum": 94.0, "variable": "black", "value": 3.571428571428571}, {"congressYear": 1977.0, "congNum": 95.0, "variable": "black", "value": 3.8202247191011236}, {"congressYear": 1979.0, "congNum": 96.0, "variable": "black", "value": 4.054054054054054}, {"congressYear": 1981.0, "congNum": 97.0, "variable": "black", "value": 4.241071428571429}, {"congressYear": 1983.0, "congNum": 98.0, "variable": "black", "value": 4.921700223713646}, {"congressYear": 1985.0, "congNum": 99.0, "variable": "black", "value": 4.719101123595506}, {"congressYear": 1987.0, "congNum": 100.0, "variable": "black", "value": 5.133928571428571}, {"congressYear": 1989.0, "congNum": 101.0, "variable": "black", "value": 5.555555555555555}, {"congressYear": 1991.0, "congNum": 102.0, "variable": "black", "value": 6.23608017817372}, {"congressYear": 1993.0, "congNum": 103.0, "variable": "black", "value": 8.928571428571429}, {"congressYear": 1995.0, "congNum": 104.0, "variable": "black", "value": 9.534368070953436}, {"congressYear": 1997.0, "congNum": 105.0, "variable": "black", "value": 9.131403118040089}, {"congressYear": 1999.0, "congNum": 106.0, "variable": "black", "value": 8.314606741573034}, {"congressYear": 2001.0, "congNum": 107.0, "variable": "black", "value": 8.705357142857142}, {"congressYear": 2003.0, "congNum": 108.0, "variable": "black", "value": 8.968609865470851}, {"congressYear": 2005.0, "congNum": 109.0, "variable": "black", "value": 9.438202247191011}, {"congressYear": 2007.0, "congNum": 110.0, "variable": "black", "value": 10.154525386313466}, {"congressYear": 2009.0, "congNum": 111.0, "variable": "black", "value": 9.070796460176991}, {"congressYear": 2011.0, "congNum": 112.0, "variable": "black", "value": 9.977827050997783}, {"congressYear": 2013.0, "congNum": 113.0, "variable": "black", "value": 9.777777777777779}, {"congressYear": 1973.0, "congNum": 93.0, "variable": "white_other", "value": 94.86607142857143}, {"congressYear": 1975.0, "congNum": 94.0, "variable": "white_other", "value": 94.86607142857143}, {"congressYear": 1977.0, "congNum": 95.0, "variable": "white_other", "value": 94.3820224719101}, {"congressYear": 1979.0, "congNum": 96.0, "variable": "white_other", "value": 94.36936936936937}, {"congressYear": 1981.0, "congNum": 97.0, "variable": "white_other", "value": 93.75}, {"congressYear": 1983.0, "congNum": 98.0, "variable": "white_other", "value": 92.39373601789708}, {"congressYear": 1985.0, "congNum": 99.0, "variable": "white_other", "value": 92.13483146067416}, {"congressYear": 1987.0, "congNum": 100.0, "variable": "white_other", "value": 91.74107142857143}, {"congressYear": 1989.0, "congNum": 101.0, "variable": "white_other", "value": 91.11111111111111}, {"congressYear": 1991.0, "congNum": 102.0, "variable": "white_other", "value": 90.42316258351893}, {"congressYear": 1993.0, "congNum": 103.0, "variable": "white_other", "value": 86.60714285714286}, {"congressYear": 1995.0, "congNum": 104.0, "variable": "white_other", "value": 86.0310421286031}, {"congressYear": 1997.0, "congNum": 105.0, "variable": "white_other", "value": 85.96881959910914}, {"congressYear": 1999.0, "congNum": 106.0, "variable": "white_other", "value": 86.29213483146067}, {"congressYear": 2001.0, "congNum": 107.0, "variable": "white_other", "value": 86.38392857142857}, {"congressYear": 2003.0, "congNum": 108.0, "variable": "white_other", "value": 84.97757847533633}, {"congressYear": 2005.0, "congNum": 109.0, "variable": "white_other", "value": 84.26966292134831}, {"congressYear": 2007.0, "congNum": 110.0, "variable": "white_other", "value": 83.88520971302428}, {"congressYear": 2009.0, "congNum": 111.0, "variable": "white_other", "value": 84.2920353982301}, {"congressYear": 2011.0, "congNum": 112.0, "variable": "white_other", "value": 83.5920177383592}, {"congressYear": 2013.0, "congNum": 113.0, "variable": "white_other", "value": 82.88888888888889}], "data-1eaf99ad77f069e8ed06cbaa6d92ff17": [{"congressYear": 1973.0, "gender": "F", "count": 16, "percentage": 3.571428571428571}, {"congressYear": 1973.0, "gender": "M", "count": 432, "percentage": 96.42857142857143}, {"congressYear": 1975.0, "gender": "F", "count": 19, "percentage": 4.241071428571429}, {"congressYear": 1975.0, "gender": "M", "count": 429, "percentage": 95.75892857142857}, {"congressYear": 1977.0, "gender": "F", "count": 18, "percentage": 4.044943820224719}, {"congressYear": 1977.0, "gender": "M", "count": 427, "percentage": 95.95505617977528}, {"congressYear": 1979.0, "gender": "F", "count": 16, "percentage": 3.6036036036036037}, {"congressYear": 1979.0, "gender": "M", "count": 428, "percentage": 96.3963963963964}, {"congressYear": 1981.0, "gender": "F", "count": 21, "percentage": 4.6875}, {"congressYear": 1981.0, "gender": "M", "count": 427, "percentage": 95.3125}, {"congressYear": 1983.0, "gender": "F", "count": 22, "percentage": 4.921700223713646}, {"congressYear": 1983.0, "gender": "M", "count": 425, "percentage": 95.07829977628636}, {"congressYear": 1985.0, "gender": "F", "count": 23, "percentage": 5.168539325842696}, {"congressYear": 1985.0, "gender": "M", "count": 422, "percentage": 94.83146067415731}, {"congressYear": 1987.0, "gender": "F", "count": 24, "percentage": 5.357142857142857}, {"congressYear": 1987.0, "gender": "M", "count": 424, "percentage": 94.64285714285714}, {"congressYear": 1989.0, "gender": "F", "count": 29, "percentage": 6.444444444444445}, {"congressYear": 1989.0, "gender": "M", "count": 421, "percentage": 93.55555555555556}, {"congressYear": 1991.0, "gender": "F", "count": 30, "percentage": 6.6815144766147}, {"congressYear": 1991.0, "gender": "M", "count": 419, "percentage": 93.31848552338529}, {"congressYear": 1993.0, "gender": "F", "count": 48, "percentage": 10.714285714285714}, {"congressYear": 1993.0, "gender": "M", "count": 400, "percentage": 89.28571428571429}, {"congressYear": 1995.0, "gender": "F", "count": 49, "percentage": 10.888888888888888}, {"congressYear": 1995.0, "gender": "M", "count": 401, "percentage": 89.11111111111111}, {"congressYear": 1997.0, "gender": "F", "count": 57, "percentage": 12.694877505567929}, {"congressYear": 1997.0, "gender": "M", "count": 392, "percentage": 87.30512249443207}, {"congressYear": 1999.0, "gender": "F", "count": 58, "percentage": 13.092550790067719}, {"congressYear": 1999.0, "gender": "M", "count": 385, "percentage": 86.90744920993228}, {"congressYear": 2001.0, "gender": "F", "count": 62, "percentage": 13.839285714285715}, {"congressYear": 2001.0, "gender": "M", "count": 386, "percentage": 86.16071428571429}, {"congressYear": 2003.0, "gender": "F", "count": 63, "percentage": 14.157303370786517}, {"congressYear": 2003.0, "gender": "M", "count": 382, "percentage": 85.84269662921349}, {"congressYear": 2005.0, "gender": "F", "count": 71, "percentage": 15.955056179775282}, {"congressYear": 2005.0, "gender": "M", "count": 374, "percentage": 84.04494382022472}, {"congressYear": 2007.0, "gender": "F", "count": 79, "percentage": 17.439293598233995}, {"congressYear": 2007.0, "gender": "M", "count": 374, "percentage": 82.560706401766}, {"congressYear": 2009.0, "gender": "F", "count": 79, "percentage": 17.516629711751662}, {"congressYear": 2009.0, "gender": "M", "count": 372, "percentage": 82.48337028824834}, {"congressYear": 2011.0, "gender": "F", "count": 79, "percentage": 17.516629711751662}, {"congressYear": 2011.0, "gender": "M", "count": 372, "percentage": 82.48337028824834}, {"congressYear": 2013.0, "gender": "F", "count": 84, "percentage": 18.666666666666668}, {"congressYear": 2013.0, "gender": "M", "count": 366, "percentage": 81.33333333333333}]}};
+                    var embedOpt = {"mode": "vega-lite"};
+    
+                    function showError(el, error){
+                        el.innerHTML = ('<div style="color:red;">'
+                                        + '<p>JavaScript Error: ' + error.message + '</p>'
+                                        + "<p>This usually means there's a typo in your chart specification. "
+                                        + "See the javascript console for the full traceback.</p>"
+                                        + '</div>');
+                        throw error;
+                    }
+                    const el = document.getElementById('vis');
+                    vegaEmbed("#vis", spec, embedOpt)
+                        .catch(error => showError(el, error));
+                    })(vegaEmbed);
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlights_2">
+        <h1 class="sec-heading">Age Demographics Among Races</h1> 
+    
+        <div class="slider">
+            <div class="col-6 slide-text">
+                <div>
+                    <h2>How does the <span style="color: #ef4b42;">Age</span> of <span style="color: #ef4b42;">Representatives</span> Compare to their Respective<span style="color: #ef4b42;"> District Average</span> ?</h2>
+                    <p>
+                        As representatives for their community, do Congress genuinely portray the racial majority of the state they came from? The Chloropleth map colors each state according to the majority race across the time of the 93rd-113rd Congressional Session. It then overlays the state with stripes if the representative from that state with the most terms matches the majority demographic. The results show mostly White majority states with matches, with a few Black majority in the South as well.
+                    </p>
+                </div>
+            </div>
+            <div class="col-6 slide-img">
+                <div class="flourish-embed flourish-scatter" data-src="visualisation/17004759"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+            </div> 
+        </div>
+    </section>
+
+    <section id="success-story_2">
+        <h1 class="sec-heading">Age Demographics - Map</h1> 
+        <div class="slider">
+            <div class="col-6 slide-text">
+                <div>
+                    <h2>Has the <span style="color: #ef4b42;">race </span>or <span style="color: #ef4b42;">gender</span> composition in Congress changed over time?</h2>
+                    <p id="short_blurb">
+                        Women and minority racial groups have historically been underrepresented in America, especially in positions of power. The visualization to the right shows the percentage distributions of three race groups (White/Other, Hispanic, and Black) and two genders (Male and Female) over time. According to the graphs, there seems to be an upward trend in number of female and non-White Congress House members.
+                    </p>
+                </div>
+                <br>
+            </div>
+            <div class="col-6 slide-img">
+                <style>
+                    #vis.vega-embed {
+                    width: 100%;
+                    display: flex;
+                    }
+    
+                    #vis.vega-embed details,
+                    #vis.vega-embed details summary {
+                    position: relative;
+                    }
+                </style>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+            </head>
+            <body>
+                <div class='tableauPlaceholder' id='viz1709613886017' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;majority_race&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='majority_race&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ma&#47;majority_race&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1709613886017');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
+        </div>
+    </section>
+       
+    <section id="revenue" class="brand-logos">
+        <h1 class="sec-heading">How do Genders Compare in Different Levels of Power? (chair, rank, comPower)</h1> 
+        <p>Women are underrepresented in Congress but are they also underrepresented within positions of power in Congress?</p>
+        <div>
+            <img src="images/customer.gif" height="200rem">
+            <img src="images/gender-equality.gif" height="200rem">
+            <img src="images/ratings.gif" height="200rem">
+        </div>
+    </section>    
+
+    <section id="delivery_2">
+<!--         <h1 class="sec-heading">Race Demographics by Political Party</h1> -->
+        <div class="col-5 delivery-img">
+            <div class="flourish-embed flourish-sankey" data-src="visualisation/16923471"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+        <div class="col-7">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+    </section>
+    <section id="delivery_2">
+<!--         <h1 class="sec-heading">Race Demographics by Political Party</h1> -->
+        <div class="col-5 delivery-img">
+            <div class="flourish-embed flourish-sankey" data-src="visualisation/16923665"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+        <div class="col-7">
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+    </section>
+    <section id="delivery_2">
+        <!--<h1 class="sec-heading">Race Demographics by Political Party</h1> -->
+        <div class="col-5 delivery-img">
+                <div class="flourish-embed flourish-sankey" data-src="visualisation/16923697"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+        <div class="col-7">
+            <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br/><br/> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+    </section>
+  
+    <section id="partners" class="brand-logos">
+        <h1 class="sec-heading">How do the distributions of age group, race, gender compare for the number of bills sponsored, cosponsored, passed, and enacted?<h1>
+
+        <div class="visualization-section">
+            
+
+    </section>
+    
+    <section id="topList" class="brand-logos">
+        <h1 class="sec-heading">The Make-up of the US Congress</h1> 
+        <div>
+            <p>The United States Congress is composed of elected officials from a myriad of backgrounds, yet historically, disproportionally reflected the nation's diversity in terms of race, gender, or socioeconomic status. Many argue that a more diverse Congress would enhance the legitimacy of policymaking and ensure that the rich tapestry of American experiences informs decisions that benefit the entirety of society.</p>
+            <br>
+            <p>Should Congress mirror the nation's demographics to ensure that varied perspectives and interests are represented?</p>
+        </div>
+    </section>
+    
+    <footer>
+       <div id="copyright">
+           Infosci 301 Final Project by Kami Wang & Disty Mahmud
+       </div>
+       <div id="owner">
+           <span>
+               Link to <a href="https://www.codingtuting.com">Dataset</a>
+           </span>
+       </div>
+       <a href="#topHeader" id="gotop">Top</a>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+    
+</body>
+</html>
